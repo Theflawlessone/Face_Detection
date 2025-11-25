@@ -1,159 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>UTKFace Project</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    header { background: #222; color: white; padding: 20px; text-align: center; }
-    nav { background: #333; padding: 10px; }
-    nav a { color: white; margin-right: 20px; text-decoration: none; font-weight: bold; }
-
-    section { padding: 40px; }
-    h2 { margin-top: 0; }
-
-    /* Card grid */
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); padding: 15px; cursor: pointer; transition: 0.3s; }
-    .card:hover { transform: scale(1.03); }
-    .card img { width: 100%; border-radius: 10px; }
-    .card-title { font-weight: bold; margin-top: 10px; }
-
-    /* Modal */
-    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
-    .modal-content { background: white; padding: 20px; border-radius: 10px; max-width: 800px; width: 90%; }
-    .modal img { width: 100%; }
-    .close-btn { float: right; cursor: pointer; font-size: 20px; }
-
-    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    /* Custom styling for model modals */
+    .modal-img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
+    .model-card { cursor: pointer; transition: transform 0.3s; }
+    .model-card:hover { transform: scale(1.03); }
+    .model-caption { text-align: center; font-weight: 600; margin-top: 8px; }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>UTKFace Deep Learning Project</h1>
+
+  <!-- ***** Header Area ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- Logo -->
+            <a href="#top" class="logo">
+              <h1>UTKFace Project</h1>
+            </a>
+
+            <!-- Menu -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#data-loading" class="active">Data Loading</a></li>
+              <li class="scroll-to-section"><a href="#preprocessing">Preprocessing</a></li>
+              <li class="scroll-to-section"><a href="#modeling">Modeling</a></li>
+              <li class="scroll-to-section"><a href="#training">Training</a></li>
+              <li class="scroll-to-section"><a href="#evaluation">Evaluation/Results</a></li>
+            </ul>
+            <a class='menu-trigger'><span>Menu</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#data">Data Loading</a>
-    <a href="#preprocessing">Preprocessing</a>
-    <a href="#modeling">Modeling</a>
-    <a href="#training">Training</a>
-    <a href="#evaluation">Evaluation</a>
-  </nav>
+  <!-- ***** Main Banner (Hero Carousel) ***** -->
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-banner">
 
-  <!-- DATA LOADING -->
-  <section id="data">
-    <h2>Data Loading</h2>
-    <p>
-      This section explains how we imported the UTKFace dataset, validated file structure, and
-      loaded the images and labels into memory. The notebook performs checks to ensure all
-      files match the expected naming convention and converts the dataset into arrays suitable
-      for later processing and training.
-    </p>
-  </section>
+            <div class="item item-1">
+              <div class="header-text">
+                <span class="category">Dataset</span>
+                <h2>Explore UTKFace Dataset</h2>
+                <p>Overview of the UTKFace dataset: face images labeled with age, gender, and ethnicity. Learn how we
+                  structure and prepare the data for deep learning models.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="#data-loading">Explore Data</a></div>
+                </div>
+              </div>
+            </div>
 
-  <!-- PREPROCESSING -->
-  <section id="preprocessing">
-    <h2>Preprocessing</h2>
-    <p>
-      We cleaned and standardized the raw face images by resizing, normalizing pixel values,
-      and extracting gender and age labels. Additional preprocessing steps include shuffling
-      data, generating train/val/test splits, and ensuring balanced gender representation.
-    </p>
-  </section>
+            <div class="item item-2">
+              <div class="header-text">
+                <span class="category">Deep Learning</span>
+                <h2>Deep Learning Age & Gender Prediction</h2>
+                <p>Learn about the neural network architectures we used to predict age and gender from face images.
+                  Models are built in Keras and PyTorch.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="#modeling">View Models</a></div>
+                </div>
+              </div>
+            </div>
 
-  <!-- MODELING WITH CARDS -->
-  <section id="modeling">
-    <h2>Modeling</h2>
-    <p>
-      In this section we introduce the deep learning architectures used for age and gender
-      prediction. Below are model cards with short summaries. Clicking a card will open a modal
-      containing a full explanation and a higher‑resolution model visualization.
-    </p>
+            <div class="item item-3">
+              <div class="header-text">
+                <span class="category">Performance</span>
+                <h2>Compare Model Performance</h2>
+                <p>We evaluate models using metrics like accuracy, MAE, and confusion matrices. This slide highlights
+                  strengths and weaknesses for each architecture.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="#evaluation">See Results</a></div>
+                </div>
+              </div>
+            </div>
 
-    <div class="card-grid">
-      <div class="card" onclick="openModal('model1')">
-        <img src="images/model1.png" alt="Model 1" />
-        <div class="card-title">Baseline CNN Model</div>
+            <div class="item item-4">
+              <div class="header-text">
+                <span class="category">Demo</span>
+                <h2>Try It Yourself</h2>
+                <p>Input an image to the model and get predicted age and gender. This links to our interactive notebook
+                  for testing your own images.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="notebook_link_here.ipynb">Request Demo</a></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div class="card" onclick="openModal('model2')">
-        <img src="images/model2.png" alt="Model 2" />
-        <div class="card-title">Improved CNN + Dropout</div>
-      </div>
-      <div class="card" onclick="openModal('model3')">
-        <img src="images/model3.png" alt="Model 3" />
-        <div class="card-title">Multi‑Task Age & Gender Model</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRAINING -->
-  <section id="training">
-    <h2>Training</h2>
-    <p>
-      The training pipeline covers batch generation, loss functions for both classification and
-      regression tasks, callbacks, checkpoint saving, and performance monitoring. We trained models
-      over multiple epochs while preventing overfitting using techniques such as dropout,
-      augmentation, and early stopping.
-    </p>
-  </section>
-
-  <!-- EVALUATION -->
-  <section id="evaluation">
-    <h2>Evaluation</h2>
-    <p>
-      Final evaluation includes accuracy for gender classification and MAE/MSE for age
-      prediction. Visualizations include training curves, confusion matrices, and prediction
-      comparisons. This section summarizes model performance and highlights strengths and
-      weaknesses observed during testing.
-    </p>
-  </section>
-
-  <!-- MODALS -->
-  <div id="model1" class="modal" onclick="closeModal(event, 'model1')">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal(event, 'model1')">&times;</span>
-      <h3>Baseline CNN Model</h3>
-      <img src="images/model1.png" />
-      <p>
-        This is the baseline convolutional neural network implemented in the notebook. It consists
-        of several convolution–ReLU–pooling blocks followed by dense layers. This model establishes
-        foundational performance for both age prediction and gender classification.
-      </p>
     </div>
   </div>
 
-  <div id="model2" class="modal" onclick="closeModal(event, 'model2')">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal(event, 'model2')">&times;</span>
-      <h3>Improved CNN + Dropout</h3>
-      <img src="images/model2.png" />
-      <p>
-        This enhanced model introduces dropout layers and additional convolution blocks to reduce
-        overfitting and improve generalization. It is more robust on validation data and provides a
-        clearer structure for multi‑task adaptation.
-      </p>
+  <!-- ***** Services Section → Notebook Sections ***** -->
+  <div class="services section" id="services">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="assets/images/service-01.png" alt="Data Loading">
+            </div>
+            <div class="main-content">
+              <h4>Data Loading</h4>
+              <p>We import UTKFace images and labels, validate the dataset structure, and prepare arrays for training
+                neural networks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="assets/images/service-02.png" alt="Preprocessing">
+            </div>
+            <div class="main-content">
+              <h4>Preprocessing</h4>
+              <p>Images are resized, normalized, and converted to arrays. Labels are encoded, invalid data removed, and
+                train/val/test splits are created for model evaluation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="assets/images/service-03.png" alt="Modeling">
+            </div>
+            <div class="main-content">
+              <h4>Modeling</h4>
+              <p>We construct multiple convolutional neural networks for age and gender prediction and compare their
+                performance and generalization capabilities.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <div id="model3" class="modal" onclick="closeModal(event, 'model3')">
+  <!-- ***** Courses Section → Models ***** -->
+  <section class="section courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Models</h6>
+            <h2>Implemented Models</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row event_box">
+        <!-- Model 1 -->
+        <div class="col-lg-4 col-md-6 mb-30">
+          <div class="events_item model-card" onclick="openModal('model1')">
+            <div class="thumb">
+              <img src="images/model1.png" alt="Baseline CNN">
+            </div>
+            <div class="down-content">
+              <h4>Baseline CNN</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 2 -->
+        <div class="col-lg-4 col-md-6 mb-30">
+          <div class="events_item model-card" onclick="openModal('model2')">
+            <div class="thumb">
+              <img src="images/model2.png" alt="CNN + Dropout">
+            </div>
+            <div class="down-content">
+              <h4>CNN + Dropout</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 3 -->
+        <div class="col-lg-4 col-md-6 mb-30">
+          <div class="events_item model-card" onclick="openModal('model3')">
+            <div class="thumb">
+              <img src="images/model3.png" alt="Multi-task Age & Gender">
+            </div>
+            <div class="down-content">
+              <h4>Multi-task Age & Gender</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ***** Training Section ***** -->
+  <section id="training" class="section">
+    <div class="container">
+      <h2>Training</h2>
+      <p>We train models using batch generation, appropriate loss functions, and optimization techniques. Metrics are
+        tracked for convergence, and overfitting is mitigated through dropout and early stopping.</p>
+    </div>
+  </section>
+
+  <!-- ***** Evaluation Section ***** -->
+  <section id="evaluation" class="section">
+    <div class="container">
+      <h2>Evaluation & Results</h2>
+      <p>Performance is evaluated using accuracy for gender classification and MAE/MSE for age regression. Training curves,
+        confusion matrices, and prediction comparisons are included to analyze model behavior and performance.</p>
+    </div>
+  </section>
+
+  <!-- ***** Modals for Models ***** -->
+  <div id="model1" class="modal" onclick="closeModal(event,'model1')">
     <div class="modal-content">
-      <span class="close-btn" onclick="closeModal(event, 'model3')">&times;</span>
-      <h3>Multi‑Task Age & Gender Model</h3>
-      <img src="images/model3.png" />
-      <p>
-        This is the final architecture designed to simultaneously predict both age and gender.
-        It features shared convolutional layers with two separate output heads, offering improved
-        efficiency and deeper feature representation suitable for complex facial attributes.
-      </p>
+      <span class="close-btn" onclick="closeModal(event,'model1')">&times;</span>
+      <h3>Baseline CNN</h3>
+      <img src="images/model1.png" class="modal-img">
+      <p>This baseline convolutional neural network consists of sequential convolution, ReLU, and pooling layers,
+        followed by dense layers for prediction. It establishes a benchmark for age and gender prediction on UTKFace.</p>
+      <p>While simple, this architecture provides insight into initial performance metrics and helps identify
+        preprocessing or architectural improvements needed for more advanced models.</p>
     </div>
   </div>
 
+  <div id="model2" class="modal" onclick="closeModal(event,'model2')">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal(event,'model2')">&times;</span>
+      <h3>CNN + Dropout</h3>
+      <img src="images/model2.png" class="modal-img">
+      <p>This improved CNN includes dropout layers to prevent overfitting and additional convolutional blocks for
+        better feature extraction. Validation performance is more robust than the baseline.</p>
+      <p>It also serves as a precursor for multi-task learning, demonstrating how regularization and deeper
+        architectures can enhance prediction accuracy.</p>
+    </div>
+  </div>
+
+  <div id="model3" class="modal" onclick="closeModal(event,'model3')">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal(event,'model3')">&times;</span>
+      <h3>Multi-task Age & Gender</h3>
+      <img src="images/model3.png" class="modal-img">
+      <p>This final model predicts both age and gender simultaneously using shared convolutional layers and two
+        separate output heads. The shared representation improves feature learning efficiency.</p>
+      <p>It outperforms previous models by capturing more complex facial attributes and allows simultaneous
+        evaluation for both tasks with high accuracy and lower MAE for age prediction.</p>
+    </div>
+  </div>
+
+  <!-- ***** Footer ***** -->
+  <footer>
+    <div class="container">
+      <div class="col-lg-12 text-center">
+        <p>Copyright © 2025 UTKFace Project. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a
+            href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ***** Scripts ***** -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
   <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
+    function openModal(id) { document.getElementById(id).style.display = "flex"; }
     function closeModal(event, id) {
       if (event.target.classList.contains('modal') || event.target.classList.contains('close-btn')) {
         document.getElementById(id).style.display = "none";
@@ -161,124 +296,5 @@
     }
   </script>
 
-  <footer>
-    <p>UTKFace Project Website</p>
-  </footer>
 </body>
 </html>
-
-<!-- ADDED SECTIONS START -->
-
-<!-- IMAGE & FILE INSERTION INSTRUCTIONS -->
-<section class="instructions" style="padding:40px 0;">
-  <div class="container">
-    <h2>How to Insert Your Real Images</h2>
-    <p>Use the following guidelines to replace all placeholder images with your actual notebook visuals:</p>
-    <ul>
-      <li>Upload your real images (PNG or JPG) into the <strong>images/</strong> folder at the root of your site.</li>
-      <li>Name your image files exactly as follows:
-        <ul>
-          <li><strong>model1_placeholder.png</strong> → replace with your first model image</li>
-          <li><strong>model2_placeholder.png</strong> → replace with your second model image</li>
-          <li><strong>model3_placeholder.png</strong> → replace with your third model image</li>
-        </ul>
-      </li>
-      <li>Use recommended widths between <strong>600–900px</strong> for best clarity.</li>
-      <li>Keep additional images in the <strong>images/</strong> folder and use consistent naming.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- SECTION DESCRIPTIONS -->
-<section id="data-loading" class="section">
-  <div class="container">
-    <h2>Data Loading</h2>
-    <p>
-      This section outlines how the UTKFace dataset was imported into the notebook. We loaded images along with key labels
-      such as age, gender, and ethnicity. Careful handling ensured corrupted or missing files were detected early so the
-      dataset could be cleanly prepared for further preprocessing and modeling stages.
-    </p>
-  </div>
-</section>
-
-<section id="preprocessing" class="section">
-  <div class="container">
-    <h2>Preprocessing</h2>
-    <p>
-      During preprocessing, images were resized, normalized, and converted into numerical arrays suitable for neural
-      networks. Label values were encoded, invalid entries were removed, and the dataset was split into training,
-      validation, and testing partitions to ensure fair evaluation. These steps standardized the data and improved model
-      performance.
-    </p>
-  </div>
-</section>
-
-<section id="modeling" class="section">
-  <div class="container">
-    <h2>Modeling</h2>
-    <p>
-      In this section we built the neural network architectures used for age and gender prediction. Models incorporated
-      convolutional layers for extracting features, pooling layers for reducing dimensionality, and fully connected
-      layers for final predictions. Multiple architectures were constructed to compare performance and robustness.
-    </p>
-  </div>
-</section>
-
-<section id="training" class="section">
-  <div class="container">
-    <h2>Training</h2>
-    <p>
-      The training process involved feeding batches of images into the networks while optimizing the weights using
-      backpropagation. We tracked metrics such as training and validation loss to ensure convergence and identify
-      overfitting. Hyperparameters—including learning rate and batch size—were adjusted to maximize stability.
-    </p>
-  </div>
-</section>
-
-<section id="evaluation" class="section">
-  <div class="container">
-    <h2>Evaluation & Results</h2>
-    <p>
-      This final section presents performance metrics including accuracy, mean absolute error, and confusion matrices.
-      Visualizations from the notebook helped reveal strengths and weaknesses of each model, highlighting prediction
-      patterns and identifying where generalization improved or declined.
-    </p>
-  </div>
-</section>
-
-<!-- MODEL 3 Modal -->
-<div id="model3-modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="document.getElementById('model3-modal').style.display='none'">&times;</span>
-    <h3>Model 3 — Placeholder Title</h3>
-    <img src="images/model3_placeholder.png" alt="Model 3" class="modal-img">
-    <p>
-      This modal will contain the full, detailed explanation of Model 3. Replace the placeholder image with a real
-      image from your notebook (such as the architecture diagram or a training graph). Add a one‑ or two‑paragraph
-      explanation based on what this model represents.
-    </p>
-  </div>
-</div>
-
-<!-- CARD CAPTIONS -->
-<div class="card-captions">
-  <style>
-    .model-card img { width:100%; border-radius:12px; }
-    .model-caption { text-align:center; font-weight:600; margin-top:8px; }
-  </style>
-  <div class="container">
-    <p class="model-caption">Model 1 — Replace this caption with a short description.</p>
-    <p class="model-caption">Model 2 — Replace this caption with a short description.</p>
-    <p class="model-caption">Model 3 — Replace this caption with a short description.</p>
-  </div>
-</div>
-
-<!-- REMOVED UNUSED SECTIONS PLACEHOLDER -->
-<!-- Team/Teachers, Events, and Contact sections have been removed for clarity. -->
-
-<!-- ENHANCED MODEL MODALS -->
-<script>
-  // Optional JS for modal animations or future expansion
-</script>
-
-<!-- ADDED SECTIONS END -->
