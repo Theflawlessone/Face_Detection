@@ -13,12 +13,13 @@
   <!-- Bootstrap CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Additional CSS -->
+  <!-- Original Scholar Template CSS -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
   <style>
     /* Custom styling for model modals */
     .modal-img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
@@ -57,67 +58,59 @@
   </header>
 
   <!-- ***** Main Banner (Hero Carousel) ***** -->
-  <!-- ***** Main Banner Area ***** -->
-<div class="main-banner" id="top">
+  <div class="main-banner" id="top">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="owl-carousel owl-banner">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-banner">
 
-                    <!-- Slide 1 -->
-                    <div class="item item-1">
-                        <div class="header-text">
-                            <span class="category">Dataset</span>
-                            <h2>Explore the UTKFace Dataset</h2>
-                            <p>Dive into a large-scale face dataset labeled by age, gender, and ethnicity for AI model development.</p>
-                            <div class="buttons">
-                                <div class="main-button"><a href="#data-loading">Explore Data</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="item item-2">
-                        <div class="header-text">
-                            <span class="category">Deep Learning</span>
-                            <h2>Age & Gender Prediction</h2>
-                            <p>See how convolutional neural networks can predict age and gender from facial images.</p>
-                            <div class="buttons">
-                                <div class="main-button"><a href="#modeling">View Models</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="item item-3">
-                        <div class="header-text">
-                            <span class="category">Evaluation</span>
-                            <h2>Compare Model Performance</h2>
-                            <p>Analyze model accuracy, mean absolute error, and other metrics to assess predictive performance.</p>
-                            <div class="buttons">
-                                <div class="main-button"><a href="#evaluation">See Results</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="item item-4">
-                        <div class="header-text">
-                            <span class="category">Demo</span>
-                            <h2>Try It Yourself</h2>
-                            <p>Upload an image and get live age and gender predictions. Explore our interactive notebook for more.</p>
-                            <div class="buttons">
-                                <div class="main-button"><a href="notebook_link_here.ipynb">Request Demo</a></div>
-                            </div>
-                        </div>
-                    </div>
-
+            <!-- Slide 1 -->
+            <div class="item item-1">
+              <div class="header-text">
+                <span class="category">Dataset</span>
+                <h2>Explore the UTKFace Dataset</h2>
+                <p>Dive into a large-scale face dataset labeled by age, gender, and ethnicity for AI model development.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="#data-loading">Explore Data</a></div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
 
+            <!-- Slide 2 -->
+            <div class="item item-2">
+              <div class="header-text">
+                <span class="category">Deep Learning</span>
+                <h2>Age & Gender Prediction</h2>
+                <p>See how convolutional neural networks can predict age and gender from facial images.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="#modeling">View Models</a></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="item item-3">
+              <div class="header-text">
+                <span class="category">Evaluation</span>
+                <h2>Compare Model Performance</h2>
+                <p>Analyze model accuracy, mean absolute error, and other metrics to assess predictive performance.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="#evaluation">See Results</a></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="item item-4">
+              <div class="header-text">
+                <span class="category">Demo</span>
+                <h2>Try It Yourself</h2>
+                <p>Upload an image and get live age and gender predictions. Explore our interactive notebook for more.</p>
+                <div class="buttons">
+                  <div class="main-button"><a href="notebook_link_here.ipynb">Request Demo</a></div>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -137,8 +130,7 @@
             </div>
             <div class="main-content">
               <h4>Data Loading</h4>
-              <p>We import UTKFace images and labels, validate the dataset structure, and prepare arrays for training
-                neural networks.</p>
+              <p>We import UTKFace images and labels, validate the dataset structure, and prepare arrays for training neural networks.</p>
             </div>
           </div>
         </div>
@@ -150,8 +142,7 @@
             </div>
             <div class="main-content">
               <h4>Preprocessing</h4>
-              <p>Images are resized, normalized, and converted to arrays. Labels are encoded, invalid data removed, and
-                train/val/test splits are created for model evaluation.</p>
+              <p>Images are resized, normalized, and converted to arrays. Labels are encoded, invalid data removed, and train/val/test splits are created for model evaluation.</p>
             </div>
           </div>
         </div>
@@ -163,8 +154,7 @@
             </div>
             <div class="main-content">
               <h4>Modeling</h4>
-              <p>We construct multiple convolutional neural networks for age and gender prediction and compare their
-                performance and generalization capabilities.</p>
+              <p>We construct multiple convolutional neural networks for age and gender prediction and compare their performance and generalization capabilities.</p>
             </div>
           </div>
         </div>
@@ -173,7 +163,7 @@
     </div>
   </div>
 
-  <!-- ***** Courses Section → Models ***** -->
+  <!-- ***** Models Section ***** -->
   <section class="section courses" id="courses">
     <div class="container">
       <div class="row">
@@ -230,8 +220,7 @@
   <section id="training" class="section">
     <div class="container">
       <h2>Training</h2>
-      <p>We train models using batch generation, appropriate loss functions, and optimization techniques. Metrics are
-        tracked for convergence, and overfitting is mitigated through dropout and early stopping.</p>
+      <p>We train models using batch generation, appropriate loss functions, and optimization techniques. Metrics are tracked for convergence, and overfitting is mitigated through dropout and early stopping.</p>
     </div>
   </section>
 
@@ -239,8 +228,7 @@
   <section id="evaluation" class="section">
     <div class="container">
       <h2>Evaluation & Results</h2>
-      <p>Performance is evaluated using accuracy for gender classification and MAE/MSE for age regression. Training curves,
-        confusion matrices, and prediction comparisons are included to analyze model behavior and performance.</p>
+      <p>Performance is evaluated using accuracy for gender classification and MAE/MSE for age regression. Training curves, confusion matrices, and prediction comparisons are included to analyze model behavior and performance.</p>
     </div>
   </section>
 
@@ -250,10 +238,8 @@
       <span class="close-btn" onclick="closeModal(event,'model1')">&times;</span>
       <h3>Baseline CNN</h3>
       <img src="images/model1.png" class="modal-img">
-      <p>This baseline convolutional neural network consists of sequential convolution, ReLU, and pooling layers,
-        followed by dense layers for prediction. It establishes a benchmark for age and gender prediction on UTKFace.</p>
-      <p>While simple, this architecture provides insight into initial performance metrics and helps identify
-        preprocessing or architectural improvements needed for more advanced models.</p>
+      <p>This baseline convolutional neural network consists of sequential convolution, ReLU, and pooling layers, followed by dense layers for prediction. It establishes a benchmark for age and gender prediction on UTKFace.</p>
+      <p>While simple, this architecture provides insight into initial performance metrics and helps identify preprocessing or architectural improvements needed for more advanced models.</p>
     </div>
   </div>
 
@@ -262,10 +248,8 @@
       <span class="close-btn" onclick="closeModal(event,'model2')">&times;</span>
       <h3>CNN + Dropout</h3>
       <img src="images/model2.png" class="modal-img">
-      <p>This improved CNN includes dropout layers to prevent overfitting and additional convolutional blocks for
-        better feature extraction. Validation performance is more robust than the baseline.</p>
-      <p>It also serves as a precursor for multi-task learning, demonstrating how regularization and deeper
-        architectures can enhance prediction accuracy.</p>
+      <p>This improved CNN includes dropout layers to prevent overfitting and additional convolutional blocks for better feature extraction. Validation performance is more robust than the baseline.</p>
+      <p>It also serves as a precursor for multi-task learning, demonstrating how regularization and deeper architectures can enhance prediction accuracy.</p>
     </div>
   </div>
 
@@ -274,10 +258,8 @@
       <span class="close-btn" onclick="closeModal(event,'model3')">&times;</span>
       <h3>Multi-task Age & Gender</h3>
       <img src="images/model3.png" class="modal-img">
-      <p>This final model predicts both age and gender simultaneously using shared convolutional layers and two
-        separate output heads. The shared representation improves feature learning efficiency.</p>
-      <p>It outperforms previous models by capturing more complex facial attributes and allows simultaneous
-        evaluation for both tasks with high accuracy and lower MAE for age prediction.</p>
+      <p>This final model predicts both age and gender simultaneously using shared convolutional layers and two separate output heads. The shared representation improves feature learning efficiency.</p>
+      <p>It outperforms previous models by capturing more complex facial attributes and allows simultaneous evaluation for both tasks with high accuracy and lower MAE for age prediction.</p>
     </div>
   </div>
 
@@ -285,8 +267,7 @@
   <footer>
     <div class="container">
       <div class="col-lg-12 text-center">
-        <p>Copyright © 2025 UTKFace Project. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a
-            href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
+        <p>Copyright © 2025 UTKFace Project. All rights reserved. &nbsp;&nbsp;&nbsp; Design: <a href="https://templatemo.com" rel="nofollow" target="_blank">TemplateMo</a></p>
       </div>
     </div>
   </footer>
@@ -306,4 +287,3 @@
 
 </body>
 </html>
-
