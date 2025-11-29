@@ -4,16 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>UTKFace Project</title>
+  <title>Age Detection</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Original Scholar Template CSS -->
+  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
   <link rel="stylesheet" href="assets/css/owl.css">
@@ -31,7 +31,20 @@
 
 <body>
 
-  <!-- ***** Header Area ***** -->
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+  <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
       <div class="row">
@@ -39,7 +52,7 @@
           <nav class="main-nav">
             <!-- Logo -->
             <a href="#top" class="logo">
-              <h1>UTKFace Project</h1>
+              <h1>Age Detection</h1>
             </a>
 
             <!-- Menu -->
@@ -56,8 +69,9 @@
       </div>
     </div>
   </header>
+  <!-- ***** Header Area End ***** -->
 
-  <!-- ***** Main Banner (Hero Carousel) ***** -->
+  <!-- ***** Main Banner ***** -->
   <div class="main-banner" id="top">
     <div class="container">
       <div class="row">
@@ -71,7 +85,9 @@
                 <h2>Explore the UTKFace Dataset</h2>
                 <p>Dive into a large-scale face dataset labeled by age, gender, and ethnicity for AI model development.</p>
                 <div class="buttons">
-                  <div class="main-button"><a href="#data-loading">Explore Data</a></div>
+                  <div class="main-button">
+                    <a href="#data-loading">Explore Data</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -83,7 +99,9 @@
                 <h2>Age & Gender Prediction</h2>
                 <p>See how convolutional neural networks can predict age and gender from facial images.</p>
                 <div class="buttons">
-                  <div class="main-button"><a href="#modeling">View Models</a></div>
+                  <div class="main-button">
+                    <a href="#modeling">View Models</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,7 +113,9 @@
                 <h2>Compare Model Performance</h2>
                 <p>Analyze model accuracy, mean absolute error, and other metrics to assess predictive performance.</p>
                 <div class="buttons">
-                  <div class="main-button"><a href="#evaluation">See Results</a></div>
+                  <div class="main-button">
+                    <a href="#evaluation">See Results</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -107,7 +127,9 @@
                 <h2>Try It Yourself</h2>
                 <p>Upload an image and get live age and gender predictions. Explore our interactive notebook for more.</p>
                 <div class="buttons">
-                  <div class="main-button"><a href="notebook_link_here.ipynb">Request Demo</a></div>
+                  <div class="main-button">
+                    <a href="notebook_link_here.ipynb">Request Demo</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -287,3 +309,4 @@
 
 </body>
 </html>
+
