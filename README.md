@@ -10,7 +10,7 @@ This is a Regression model trained to recognize faces and predict ages.
 # How to Setup
 1. Download UTKFaces_updated.ipynb in the Notebook folder.
 2. Open the file in Google Colab.
-3. Open up the UTKFace folder in Google Drive and download part1.tar.gz, part2.tar.gz, and part3.tar.gz.
+3. Open up the UTKFace folder in Google Drive [here](https://drive.google.com/drive/folders/17smTilKxBXzxsQYiP-0gh-b1l-0pCFzj?usp=sharing) and download part1.tar.gz, part2.tar.gz, and part3.tar.gz.
 4. Put the three tar.gz files into data/raw/.
 5. Run the cells to train the model.
 
