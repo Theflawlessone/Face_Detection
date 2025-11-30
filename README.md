@@ -15,12 +15,12 @@ This is a Regression model trained to recognize faces and predict ages.
 5. Run the cells to train the model.
 
 # Dependencies
-PIL                 11.3.0
-matplotlib          3.10.0
-numpy               2.0.2
-pandas              2.2.2
-seaborn             0.13.2
-sklearn             1.6.1
-torch               2.9.0+cu126
-torchvision         0.24.0+cu126
-tqdm                4.67.1
+PIL                 11.3.0  
+matplotlib          3.10.0  
+numpy               2.0.2  
+pandas              2.2.2  
+seaborn             0.13.2  
+sklearn             1.6.1  
+torch               2.9.0+cu126  
+torchvision         0.24.0+cu126  
+tqdm                4.67.1  
