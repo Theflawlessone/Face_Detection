@@ -8,7 +8,11 @@ This is a Regression model trained to recognize faces
 - **index.html** and its accompanying folders 'assets' and 'vendor' is the frontend of the project.
 
 # How to Setup
-Google Colab pickle
+1. Download UTKFaces_updated.ipynb in the Notebook folder.
+2. Open the file in Google Colab.
+3. Open up the UTKFace folder in Google Drive and download part1.tar.gz, part2.tar.gz, and part3.tar.gz.
+4. Put the three tar.gz files into data/raw/.
+5. Run the cells to train the model.
 
 # Dependencies
 PIL                 11.3.0
