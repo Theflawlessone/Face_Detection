@@ -35,3 +35,6 @@ Performance goal: achieve ~5-year MAE for regression and ≥70% classification a
 - torch               2.9.0+cu126
 - torchvision         0.24.0+cu126
 - tqdm                4.67.1
+
+# Video presentation
+link: https://www.youtube.com/watch?v=EyPmXzhzkRo 
