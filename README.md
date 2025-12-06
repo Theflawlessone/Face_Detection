@@ -19,6 +19,19 @@ Performance goal: achieve ~5-year MAE for regression and ≥70% classification a
 - **index.html** and its accompanying folders 'assets' and 'vendor' is the frontend of the project.
 
 # How to Setup
+
+### Recommended Setup (VS Code)
+1. Install VS Code (latest version)
+2. Install Python + Jupyter extensions
+3. Open the repo folder in VS Code (not just a single file)
+4. Create a virtual environment:
+   python -m venv venv
+   .\venv\Scripts\activate
+5. Install dependencies:
+   pip install -r requirements.txt
+6. Select the kernel: "age-detection-env" from the notebook toolbar
+
+###
 1. Download UTKFaces_updated.ipynb in the Notebook folder.
 2. Open the file in Google Colab.
 3. Open up the UTKFace folder in Google Drive [here](https://drive.google.com/drive/folders/17smTilKxBXzxsQYiP-0gh-b1l-0pCFzj?usp=sharing) and download part1.tar.gz, part2.tar.gz, and part3.tar.gz.

@@ -1,0 +1,14 @@
+# Raw UTKFace data
+data/raw/*
+!data/raw/.gitkeep
+
+# Saved models
+saved_models/*
+!saved_models/.gitkeep
+
+# Python / notebook noise
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+venv/

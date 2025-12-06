@@ -1,0 +1,29 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+
+# Visualization
+matplotlib
+seaborn
+
+# PyTorch + torchvision (CPU or GPU installed separately)
+torch
+torchvision
+
+# Face detection (MTCNN)
+facenet-pytorch
+
+# Image processing
+Pillow
+
+# ML utilities
+scikit-learn
+
+# Notebook environment
+ipykernel
+jupyter
+tqdm
+
+# Optional (nice to have)
+opencv-python
