@@ -1,53 +1,176 @@
-# Face_Detection
+# Face Detection & Age Estimation (UTKFace)
 
-This is a Regression model trained to recognize faces and predict ages.
+This project explores **facial age estimation** using deep learning.  
+Using the UTKFace dataset, we train and evaluate two models:
 
-# Project Goals
-Accurately estimate a person’s age from their facial features using two approaches:
-1. A regression model that predicts exact age, and...
-2. A classification model that predicts age groups.
+1. **Age Regression Model** — predicts a person’s exact age  
+2. **Age-Group Classification Model** — predicts one of five age groups  
 
-Analyze how demographic factors (race and gender) influence model accuracy to identify potential biases in facial age estimation.
+In addition to performance, we analyze **demographic bias** (race and gender) and discuss **ethical implications** of age-prediction systems.
 
-Evaluate ethical concerns surrounding the use of age-prediction models , including risks in security, surveillance, recommendation systems, and demographic profiling.
+---
 
-Performance goal: achieve ~5-year MAE for regression and ≥70% classification accuracy for age-group prediction.
+## Project Goals
 
-# Project Setup
-- **Notebooks** is where the multiple iterations of our ipynb files are. This holds the code where we cleaned the data and ran the model.
-- **pickle_files** is where the data is stored, being training data, test data, and validation data. The files are in pkl format and are imported into our code via the pickle Python library.
-- **index.html** and its accompanying folders 'assets' and 'vendor' is the frontend of the project.
+- Accurately estimate age from facial features using deep learning
+- Compare **regression vs. classification** approaches
+- Analyze how **race and gender** affect model performance
+- Discuss ethical concerns including:
+  - surveillance and monitoring
+  - demographic profiling
+  - recommendation systems
+  - security and misuse risks
 
-# How to Setup
+**Target performance**
+- Regression: ~5 year MAE  
+- Classification: ≥79% accuracy  
 
-### Recommended Setup (VS Code)
-1. Install VS Code (latest version)
-2. Install Python + Jupyter extensions
-3. Open the repo folder in VS Code (not just a single file)
-4. Create a virtual environment:
-   python -m venv venv
-   .\venv\Scripts\activate
-5. Install dependencies:
-   pip install -r requirements.txt
-6. Select the kernel: "age-detection-env" from the notebook toolbar
+---
 
-###
-1. Download UTKFaces_updated.ipynb in the Notebook folder.
-2. Open the file in Google Colab.
-3. Open up the UTKFace folder in Google Drive [here](https://drive.google.com/drive/folders/17smTilKxBXzxsQYiP-0gh-b1l-0pCFzj?usp=sharing) and download part1.tar.gz, part2.tar.gz, and part3.tar.gz.
-4. Put the three tar.gz files into data/raw/.
-5. Run the cells to train the model.
+## Dataset
 
-# Dependencies
-- PIL                 11.3.0
-- matplotlib          3.10.0
-- numpy               2.0.2
-- pandas              2.2.2
-- seaborn             0.13.2
-- sklearn             1.6.1
-- torch               2.9.0+cu126
-- torchvision         0.24.0+cu126
-- tqdm                4.67.1
+This project uses the **UTKFace dataset**, which contains face images labeled with:
+- age
+- gender
+- race
 
-# Video Presentation
-link: https://www.youtube.com/watch?v=EyPmXzhzkRo 
+### Dataset Download
+
+Download the three UTKFace archive files:
+
+- `part1.tar.gz`
+- `part2.tar.gz`
+- `part3.tar.gz`
+
+Place all three files into:
+data/raw/
+
+---
+
+## Setup
+
+### 1. Clone the repository
+
+git clone https://github.com/Theflawlessone/Face_Detection.git
+cd Face_Detection
+
+### 2. Create a virtual 
+
+python -m venv venv
+source venv/bin/activate   # macOS / Linux
+venv\Scripts\activate      # Windows
+
+### 3. Install dependencies
+
+pip install -r requirements.txt
+
+## Reproducible Pipeline (Scripts)
+
+All scripts should be run from the repository root.
+
+### 1. Extract the dataset
+
+Safely extracts the UTKFace archives and avoids re-extracting files if already processed.
+
+python -m src.extract
+
+### 2. Preprocess and crop faces
+
+- Detects and crops faces using MTCNN
+- Reuses existing crops if present
+- Generates metadata.csv
+
+python -m src.preprocess
+
+### 3. Train age-group classification model
+
+Trains a ResNet18 classifier to predict 5 age groups.
+python -m src.classification_train
+
+Best model is saved to:
+saved_models/best_classification_resnet18.pt
+
+### 4. Train age regression model
+
+Trains a ResNet18 regressor to predict exact age.
+python -m src.train_age_regression
+
+Best model is saved to:
+saved_models/best_age_resnet18.pt
+
+## Notebooks
+
+Notebooks are used for analysis and visualization, not core pipeline logic.
+
+1_preprocessing_eda.ipynb
+Dataset exploration, distributions, sample images
+
+2_models.ipynb
+Training curves, evaluation metrics, bias/fairness analysis
+
+3_demo.ipynb
+Qualitative predictions on example images
+
+All notebooks rely on outputs generated by the scripts.
+
+## Running on Google Colab
+
+!git clone https://github.com/Theflawlessone/Face_Detection.git
+%cd /content/Face_Detection
+
+Run any script, for example:
+!python -m src.preprocess
+
+Path handling is centralized to support both local and Colab execution.
+
+## Models & Evaluation
+
+### Age-Group Classification
+
+5 classes:
+- Child (0–12)
+- Teen (13–19)
+- Young Adult (20–39)
+- Middle-Aged (40–59)
+- Senior (60+)
+
+Metric: accuracy
+
+### Age Regression
+
+Continuous age prediction
+Metrics: MSE loss, MAE
+Bias and fairness analyses across race and gender are explored in the notebooks.
+
+### Ethical Considerations
+
+Age-prediction models raise important ethical concerns, including:
+- potential misuse in surveillance systems
+- demographic profiling and discrimination
+- unequal performance across groups
+- lack of consent in real-world deployment
+- These concerns are discussed alongside empirical bias analysis in the project.
+
+### Dependencies
+
+Key libraries used:
+- PyTorch
+- torchvision
+- facenet-pytorch (MTCNN)
+- numpy
+- pandas
+- scikit-learn
+- matplotlib / seaborn
+- tqdm
+
+Full dependency versions are listed in requirements.txt.
+
+## Video Presentation
+
+https://www.youtube.com/watch?v=EyPmXzhzkRo
+
+## Acknowledgements
+
+UTKFace Dataset
+PyTorch & torchvision
+facenet-pytorch
