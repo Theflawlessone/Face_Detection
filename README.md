@@ -171,6 +171,6 @@ https://www.youtube.com/watch?v=EyPmXzhzkRo
 
 ## Acknowledgements
 
-UTKFace Dataset
-PyTorch & torchvision
-facenet-pytorch
+- UTKFace Dataset
+- PyTorch & torchvision
+- facenet-pytorch
